@@ -11,10 +11,11 @@ export const Hero = () => {
             <div className="hero-left">
                 <div>
                     <div className="hero-hand-icon">
-                        <p>Our story</p>
+                        <h1>Our story</h1>
                         {/* <img src={hand_icon} alt="" /> */}
                     </div>
-                    <p>Collections</p>
+                    <p>A platform connecting Illawara farmers directly with customers to sell produce and exchange agriculture machinery.
+                        Empowering farmers, fostering community engagement, and promoting sustainable practices for a vibrant local economy.</p>
                     <p>for everyone</p>
                 </div>
                 <div className="hero-latest-btn">
