@@ -41,7 +41,7 @@
     width: 80%;
     height: 3px;
     border-radius: 10px;
-    background: #FF4141;
+    background: #71C562;
 }
 
 .nav-login-cart {
@@ -65,7 +65,7 @@
 }
 
 .nav-login-cart button:active{
-    background: #FF4141;
+    background: #71C562;
 }
 
 .nav-cart-count {
@@ -77,7 +77,7 @@
     margin-top: -35px;
     margin-left: -55px;
     font-size:  14px;
-    background: red;
+    background: #71C562;
     color: white;
     border-radius: 11px;
 }

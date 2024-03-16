@@ -3,25 +3,27 @@
     margin: 0px 170px;
 }
 
-.productDisplay-left{
+.productDisplay-left {
     display: flex;
     gap: 17px;
 }
-.productDisplay-img-list{
+
+.productDisplay-img-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-.productDisplay-img-list img{
+
+.productDisplay-img-list img {
     height: 163px;
 }
 
-.productDisplay-main-img{
+.productDisplay-main-img {
     width: 586px;
     height: 700px;
 }
 
-.productDisplay-right{
+.productDisplay-right {
     margin: 0px 70px;
     display: flex;
     flex-direction: column;
@@ -33,7 +35,7 @@
     font-weight: 700;
 }
 
-.productDisplay-right-star{
+.productDisplay-right-star {
     display: flex;
     align-items: center;
     margin-top: 13px;
@@ -42,30 +44,32 @@
     font-size: 16px;
 }
 
-.productDisplay-right-prices{
+.productDisplay-right-prices {
     display: flex;
     margin: 40px 0px;
     gap: 30px;
     font-size: 24px;
     font-weight: 700;
 }
-.productDisplay-right-price-old{
+
+.productDisplay-right-price-old {
     color: #818181;
 }
-.productDisplay-right-price-new{
-    color: #ff4141;
+
+.productDisplay-right-price-new {
+    color: #71C562;
 }
 
-.productDisplay-right-description{
+.productDisplay-right-description {}
 
-}
-.productDisplay-right-size h1{
+.productDisplay-right-size h1 {
     margin-top: 55px;
     color: #656565;
     font-size: 20px;
     font-weight: 600;
 }
-.productDisplay-right-sizes{
+
+.productDisplay-right-sizes {
     display: flex;
     margin: 30px 0px;
     gap: 20px;
@@ -78,22 +82,25 @@
     border-radius: 3px;
     cursor: pointer;
 }
+
 .productDisplay-right button {
     padding: 20px 40px;
     width: 200px;
     font-size: 16px;
     font-weight: 600;
     color: white;
-    background: #ff4141;
+    background: #71C562;
     margin-bottom: 40px;
     border: none;
     outline: none;
     cursor: pointer;
 }
-.productDisplay-right-category{
+
+.productDisplay-right-category {
     margin-top: 10px;
 
 }
-.productDisplay-right-category span{
+
+.productDisplay-right-category span {
     font-weight: 600;
 }
