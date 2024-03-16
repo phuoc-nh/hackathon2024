@@ -12,7 +12,6 @@ export const NewCollections = () => {
     .then((data)=> setNewCollection(data))
   },[])
 
-
   return (
     <div className='new-collections'>
         <h1>New Collections</h1>
