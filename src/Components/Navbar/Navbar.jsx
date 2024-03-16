@@ -12,7 +12,7 @@ export const Navbar = () => {
   return (
     <div className='navbar'>
         <div className="nav-logo">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" height={40} />
             <p>ALLO Farm</p>
         </div>
         <ul className="nav-menu">

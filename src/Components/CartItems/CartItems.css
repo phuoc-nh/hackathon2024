@@ -73,3 +73,25 @@
     font-weight: 600;
     cursor: pointer;
 }
+
+.shipping-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.shipping-container input {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #ebebeb;
+    padding: 0px 20px;
+    outline: none;
+}
+
+.shipping-container select {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #ebebeb;
+    padding: 0px 20px;
+    outline: none;
+}

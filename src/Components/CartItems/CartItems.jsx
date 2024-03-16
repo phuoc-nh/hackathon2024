@@ -2,10 +2,61 @@ import React, { useContext } from 'react'
 import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
+import { useQuery, gql, useMutation } from '@apollo/client';
+
+const CREATE_JOB = gql`
+  mutation CreateJob($record: JobRecordInput) {
+    createJob(record: $record) {
+        record {
+            _id
+        }
+    }
+}
+`;
 
 
 export const CartItems = () => {
     const { all_product, cartItems, removeFromCart, getTotalCartAmount } = useContext(ShopContext)
+    const [createJobMutation, { data }] = useMutation(CREATE_JOB);
+
+    // const onButtonClick = () => {
+    //   createJob({ variables: { record: { /* your record data here */ } } });
+    // };
+
+    const createJob = () => {
+        // "record": {
+        //     "clientId": "65f4fac4a289418eb74b799b",
+        //     "customerAddressId": "65f4fac4a289418eb74b79bf",
+        //     "customerId": "65f4fac4a289418eb74b799b",
+        //     "fleetId": null,
+        //     "items": [],
+        //     "jobDate": "2024-03-16T11:25:02.088Z",
+        //     "jobStatus": null,
+        //     "jobType": "pickupOnly",
+        //     "supplierAddressId": "65f4fac4a289418eb74b79ba",
+        //     "supplierId": "65f4fac4a289418eb74b799f"
+        //   }
+
+        
+
+        createJobMutation(
+            { variables: 
+                { 
+                    record: {
+                        "clientId": "65f4fac4a289418eb74b799b",
+                        "customerAddressId": "65f4fac4a289418eb74b79bf",
+                        "customerId": "65f4fac4a289418eb74b799b",
+                        "fleetId": null,
+                        "items": [],
+                        "jobDate": "2024-03-16T11:25:02.088Z",
+                        "jobStatus": null,
+                        "jobType": "pickupOnly",
+                        "supplierAddressId": "65f4fac4a289418eb74b79ba",
+                        "supplierId": "65f4fac4a289418eb74b799f"
+
+         } } });
+    }
+
     return (
         <div className='cartItems'>
             <div className="cartItems-format-main">
@@ -50,7 +101,28 @@ export const CartItems = () => {
                         <h3>Total</h3>
                         <h3>${getTotalCartAmount()}</h3>
                     </div>   
-                     <button>PROCEED TO CHECKOUT</button>
+
+                    {/*  */}
+                    <div className='shipping-container'>
+                        <h3>Shipping address</h3>
+                        <input type="text" placeholder="First name" />
+                        <input type="text" placeholder="Postcode" />
+                        <select>
+                            <option value="someOption">Bulli</option>
+                            <option value="otherOption">Fairy Meadow</option>
+                            <option value="otherOption">Dapto</option>
+                        </select>
+                        <input type="text" placeholder="Email" />
+                    </div>  
+
+                    <div className='shipping-container'>
+                        <h3>Payment details</h3>
+                        <input type="text" placeholder="Card number" required />
+                        <input type="text" placeholder="Expiry" require />
+                        <input type="text" placeholder="CVC" />
+                    </div> 
+
+                     <button onClick={createJob}>PROCEED TO CHECKOUT</button>
                 </div>
             </div>
         </div>

@@ -19,7 +19,10 @@ const ShopContextProvider = (prop) => {
     useEffect(() => {
         fetch('http://localhost:4000/allProducts')
             .then((respone) => respone.json())
-            .then((data) => setAllProduct())
+            .then((data) => {
+                console.log(data)
+                setAllProduct(data)
+            })
 
         if (localStorage.getItem('auth-token')) {
             fetch('http://localhost:4000/getcart', {
@@ -35,7 +38,6 @@ const ShopContextProvider = (prop) => {
 
         }
     }, [])
-    // console.log(all_product)
 
     const addToCart = (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))

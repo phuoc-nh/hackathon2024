@@ -31,27 +31,24 @@ export const ProductDisplay = (props) => {
                 <p>(122)</p>
             </div>
             <div className="productDisplay-right-prices">
-                <div className="productDisplay-right-price-old">${product.old_price}</div>
-                <div className="productDisplay-right-price-new">${product.new_price}</div>
+                <div className="productDisplay-right-price-old">From: {product.old_price}</div>
+                <div className="productDisplay-right-price-new">To: {product.new_price}</div>
             </div>
             <div className="productDisplay-right-description">
-               A lightweight, usually knitted, pullover shirt, close-fitting and a round neckline
-               and short sleeves, worn as an undershirt or outer
+            Nestled amidst rolling fields and framed by verdant countryside, the strawberry farm is a picturesque haven for fruit enthusiasts and nature lovers alike
             </div>
             <div className="productDisplay-right-size">
-                <h1>Select Size</h1>
+                <h1>Select Box</h1>
                 <div className="productDisplay-right-sizes">
-                    <div className="">S</div>
-                    <div className="">M</div>
-                    <div className="">L</div>
-                    <div className="">XL</div>
-                    <div className="">XXL</div>
+                    <div className="">Small</div>
+                    <div className="">Medium</div>
+                    <div className="">Large</div>
                     
                 </div>
             </div>
             <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
-            <p className="productDisplay-right-category"> <span>Category :</span> {product.category}, T-shirt, Crop top </p>
-            <p className="productDisplay-right-category"> <span>Tags :</span>Modern, Latest </p>
+            <p className="productDisplay-right-category"> <span>Category :</span> Groceries, Fruits, vegies </p>
+            <p className="productDisplay-right-category"> <span>Tags: </span>#organic #local </p>
 
         </div>
     </div>

@@ -11,6 +11,7 @@ import women_banner from './Components/Assets/banner_women.png'
 import kid_banner from './Components/Assets/banner_kids.png'
 import client from './AppolloClient/client';
 import { ApolloProvider } from '@apollo/client';
+import FarmerPortal from './Pages/FarmerPortal';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         </Route>
         <Route path='/cart' element= {<Cart/>}/>
         <Route path='/login' element = {<LoginSignup/>} />
+        <Route path='/farmer-portal' element = {<FarmerPortal/>} />
       </Routes>
       <Footer />
       </BrowserRouter>

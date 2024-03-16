@@ -1,5 +1,5 @@
 import React from 'react'
-import exclusive_image from '../Assets/exclusive_image.png'
+import exclusive_image from '../Assets/grocBox.jpeg'
 import './Offers.css'
 export const Offers = () => {
   return (
@@ -11,7 +11,7 @@ export const Offers = () => {
             <button>Check Now</button>
         </div>
         <div className="offer-right">
-            <img src={exclusive_image} alt="" />
+            <img src={exclusive_image} alt="" width={400} />
         </div>
     </div>
   )
