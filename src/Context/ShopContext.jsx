@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-// import all_product from '../Components/Assets/all_product.js'
+import all_product from '../Components/Assets/all_product.js'
 
 export const ShopContext = createContext(null);
 
@@ -19,7 +19,7 @@ const ShopContextProvider = (prop) => {
     useEffect(() => {
         fetch('http://localhost:4000/allProducts')
             .then((respone) => respone.json())
-            .then((data) => setAllProduct(data))
+            .then((data) => setAllProduct())
 
         if (localStorage.getItem('auth-token')) {
             fetch('http://localhost:4000/getcart', {

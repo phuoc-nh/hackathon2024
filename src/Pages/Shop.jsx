@@ -7,11 +7,11 @@ import { NewsLetter } from '../Components/NewsLetter/NewsLetter'
 export const Shop = () => {
   return (
     <div>
-      <Hero/>
-      <Popular/>
-      <Offers/>
-      <NewCollections/>
-      <NewsLetter/>
+      <Hero />
+      <Popular />
+      <Offers />
+      {/* <NewCollections/> */}
+      <NewsLetter />
     </div>
   )
 }
