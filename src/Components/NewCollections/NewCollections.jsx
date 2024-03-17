@@ -10,6 +10,7 @@ export const NewCollections = () => {
     fetch('http://localhost:4000/newcollection')
     .then((res)=>res.json())
     .then((data)=> setNewCollection(data))
+    console.log(newCollection)
   },[])
 
   return (
