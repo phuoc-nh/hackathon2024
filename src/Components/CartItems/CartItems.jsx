@@ -3,6 +3,7 @@ import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
 import { useQuery, gql, useMutation } from '@apollo/client';
+import Books from '../../Book';
 
 const CREATE_JOB = gql`
   mutation CreateJob($record: JobRecordInput) {
@@ -17,13 +18,9 @@ const CREATE_JOB = gql`
 
 export const CartItems = () => {
     const { all_product, cartItems, removeFromCart, getTotalCartAmount } = useContext(ShopContext)
-    const [createJobMutation, { data }] = useMutation(CREATE_JOB);
+    const [createJobMutation, { _ }] = useMutation(CREATE_JOB);
 
-    // const onButtonClick = () => {
-    //   createJob({ variables: { record: { /* your record data here */ } } });
-    // };
-
-    const createJob = () => {
+    const createJob = async () => {
         // "record": {
         //     "clientId": "65f4fac4a289418eb74b799b",
         //     "customerAddressId": "65f4fac4a289418eb74b79bf",
@@ -38,23 +35,35 @@ export const CartItems = () => {
         //   }
 
         
-
-        createJobMutation(
-            { variables: 
+        console.log('<<<<<<<<<<<<<<', new Date());
+        try {
+            
+            const res = await createJobMutation(
                 { 
-                    record: {
-                        "clientId": "65f4fac4a289418eb74b799b",
-                        "customerAddressId": "65f4fac4a289418eb74b79bf",
-                        "customerId": "65f4fac4a289418eb74b799b",
-                        "fleetId": null,
-                        "items": [],
-                        "jobDate": "2024-03-16T11:25:02.088Z",
-                        "jobStatus": null,
-                        "jobType": "pickupOnly",
-                        "supplierAddressId": "65f4fac4a289418eb74b79ba",
-                        "supplierId": "65f4fac4a289418eb74b799f"
+                    variables: { 
+                        record: {
+                            clientId: "65f4fac4a289418eb74b799b",
+                            customerAddressId: "65f4fac4a289418eb74b79bf",
+                            customerId: "65f4fac4a289418eb74b799b",
+                            fleetId: null,
+                            items: [],
+                            jobDate: new Date(),
+                            jobStatus: null,
+                            jobType: "pickupOnly",
+                            supplierAddressId: "65f4fac4a289418eb74b79ba",
+                            supplierId: "65f4fac4a289418eb74b799f"
+    
+                        }
+                    }
+                }
+            );
 
-         } } });
+            console.log('data>>>>', res.data.createJob.record._id);
+            localStorage.setItem('jobId', res.data.createJob.record._id);
+        } catch (error) {
+            
+            console.log('error', error);
+        }
     }
 
     return (
