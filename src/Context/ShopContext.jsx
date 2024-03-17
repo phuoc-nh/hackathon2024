@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import all_product from '../Components/Assets/all_product.js'
+// import all_product from '../Components/Assets/all_product.js'
 
 export const ShopContext = createContext(null);
 
@@ -20,7 +20,7 @@ const ShopContextProvider = (prop) => {
         fetch('http://localhost:4000/allProducts')
             .then((respone) => respone.json())
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setAllProduct(data)
             })
 
